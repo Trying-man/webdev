@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>네이버 실시간 검색어</title>
+<title>네이버 실시간 검색어!!</title>
 </head>
 <body>
 
