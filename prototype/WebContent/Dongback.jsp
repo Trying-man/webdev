@@ -10,14 +10,15 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
+<h1>이유정 바보</h1>
 	<div id="map" style="width:100%;height:100vh;"></div>
 
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=838338d237cae9646ef84df5b932af7a&libraries=clusterer"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
-		        center: new kakao.maps.LatLng(35.1488467, 129.00074688), // 지도의 중심좌표
-		        level: 12, // 지도의 확대 레벨
+		        center: new kakao.maps.LatLng(35.148846, 129.000746), // 지도의 중심좌표
+		        level: 10, // 지도의 확대 레벨
 		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 		    }; 
 

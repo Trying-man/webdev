@@ -72,7 +72,7 @@
 	</div>
 	<div id="coordXY"></div>
 	</div>
-	
+	<p id="2"></p>
 	
 	<!-- ★ 키입력 뒷편 &libraries=services 필수입력 -->
 	<script type="text/javascript"
@@ -153,7 +153,7 @@
 		
 		
 		
-		
+		var i=0;
 				
 		listData.forEach(function(addr, index) {
 					// ★ 주소로 좌표를 검색 
@@ -162,7 +162,7 @@
 										// 정상적으로 검색이 완료됐으면 
 										if (status === kakao.maps.services.Status.OK) {
 
-											var coords = new kakao.maps.LatLng(result[0].y, result[0].x); 
+											var coords = new kakao.maps.LatLng(result[i].y, result[i].x); 
 											
 											
 											
@@ -173,7 +173,7 @@
 											<%String x3=request.getParameter("result[0].y");%>
 											
 											document.getElementById("1").innerHTML ="lat : "+ xx+ " lng : "+yy;
-											
+											i=i+1;
 
 											/// 결과값으로 받은 위치를 마커로 표시 
 											var marker = new kakao.maps.Marker(
@@ -210,11 +210,12 @@
 											
 											}					
 										
+											
 									});
 					
 					
 				});
-		
+		document.getElementById("2").innerHTML=i;
 		
 		var clusterer = new kakao.maps.MarkerClusterer({
 			map: map,	//마커들을 클러스터로 관리하고 표시할 지도 객체
@@ -222,7 +223,7 @@
 			minLevel: 10	//클러스터 할 최소 지도 레벨
 		});
 		
-		(addr,function(data){
+		$.get("/",function(data){
 			
 			var markers = $(data.positions).map(function(i,position){
 				return new kakao.maps.Marker({
@@ -254,14 +255,21 @@
 </head>
 
 <body>
-<p id="1"></p> 
+<div>
+	<table width="500" border="1">
+
+	<%String cha1=request.getParameter("id"); %>
+	<%= cha1 %>
+	
 	
 	<script>
-
 	
-	
+	print("x");
 	</script>
 	
+<tr><th><p id="1"></p></th></tr>
+	</table>
+	</div>
 </body>
 
 </html>
